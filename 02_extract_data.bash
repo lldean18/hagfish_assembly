@@ -14,8 +14,10 @@
 
 
 # extract the downloaded tar archives
-tar -xf /gpfs01/home/mbzlld/data/hagfish/raw_data/native-testis-gDNA-runs.tar_ds.65d54afc517d42748734e471d8b06e54/native-testis-gDNA-runs.tar
+cd /gpfs01/home/mbzlld/data/hagfish/raw_data/native-testis-gDNA-runs.tar_ds.65d54afc517d42748734e471d8b06e54
+tar -xf native-testis-gDNA-runs.tar
 
-tar -xf /gpfs01/home/mbzlld/data/hagfish/raw_data/pcr-testis-gDNA-runs.tar_ds.ab6ab2b3be014723b4fc1c8a4b48b9e8/pcr-testis-gDNA-runs.tar
+cd /gpfs01/home/mbzlld/data/hagfish/raw_data/pcr-testis-gDNA-runs.tar_ds.ab6ab2b3be014723b4fc1c8a4b48b9e8
+tar -xf pcr-testis-gDNA-runs.tar
 
 
