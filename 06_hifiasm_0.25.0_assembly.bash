@@ -1,6 +1,6 @@
 #!/bin/bash
 # Laura Dean
-# 16/6/25
+# 17/6/25
 # for running on Ada
 
 #SBATCH --partition=hmemq
@@ -23,7 +23,7 @@ conda activate hifiasm_0.25.0
 # set environment variables
 wkdir=/gpfs01/home/mbzlld/data/hagfish # set the working directory
 attempt=1
-reads=$wkdir/basecalls/all_simplex_simplex.fastq.gz
+reads=$wkdir/basecalls/native_and_pcr_calls.fastq.gz
 
 # print a line to the slurm output that says exactly what was done on this run
 echo "This is hifiasm version 0.25.0 running on the file $reads with the new --ONT flag and saving the output to the directory $wkdir/hifiasm_$attempt"
@@ -44,3 +44,4 @@ awk '/^S/{print ">"$2;print $3}' ONTasm.bp.p_ctg.gfa > ONTasm.bp.p_ctg.fasta
 
 # deactivate conda
 conda deactivate
+
