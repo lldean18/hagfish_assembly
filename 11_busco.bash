@@ -27,6 +27,13 @@ assembly=JAXMNL01.fasta.gz
 # unzip the .gz assembly files
 #gunzip -k $wkdir/$assembly_dir/$assembly
 assembly=${assembly%.*}
+# for Eptatretus_atami_ref I also had to get rid of spaces between chr name and number for busco to run!
+#sed -i 's/>chromosome />chromosome/' JAXMNL01.fasta
+
+
+
+
+
 
 lineage_dataset=vertebrata_odb10
 
