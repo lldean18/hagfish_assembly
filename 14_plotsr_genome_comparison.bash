@@ -42,14 +42,14 @@ minimap2 \
 -ax $asm \
 -t 16 \
 --eqx $asm1 $reference \
--o $wkdir/tmp.sam
-samtools sort $wkdir/tmp.sam \
--o $wkdir/$(basename ${asm1%.*})_$asm.bam
-rm $wkdir/tmp.sam
+-o $wkdir/$(basename ${asm1%.*})_$asm
+#samtools sort $wkdir/tmp.sam \
+#-o $wkdir/$(basename ${asm1%.*})_$asm.bam
+#rm $wkdir/tmp.sam
 conda deactivate
 
 # index the bam file
-samtools index -bc $wkdir/$(basename ${asm1%.*})_$asm.bam
+#samtools index -bc $wkdir/$(basename ${asm1%.*})_$asm.bam
 
 # write the names of the assemblies to a file for use by plotsr
 echo -e ""$asm1"\tEptatretus_stoutii
@@ -70,10 +70,10 @@ conda activate syri
 
 # Run syri to find structural rearrangements between your assemblies
 syri \
--c $wkdir/$(basename ${asm1%.*})_$asm.bam \
+-c $wkdir/$(basename ${asm1%.*})_$asm.sam \
 -r $reference \
 -q $asm1 \
--F B \
+-F S \
 --dir $wkdir \
 --prefix $(basename ${asm1%.*})_${asm}_syri
 
