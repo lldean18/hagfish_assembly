@@ -28,35 +28,35 @@ source $HOME/.bash_profile
 module load samtools-uoneasy/1.18-GCC-12.3.0
 
 
-###########################################
-#### map our assembly to the reference ####
-###########################################
-
-echo "Mapping our assembly to the reference..."
-conda activate minimap2
-
-# align the genomes
-
-# for reference asm5/asm10/asm20 = 0.1%/1%/5% sequence divergence
-minimap2 \
--ax $asm \
--t 16 \
---eqx $asm1 $reference \
--o $wkdir/$(basename ${asm1%.*})_$asm
-#samtools sort $wkdir/tmp.sam \
-#-o $wkdir/$(basename ${asm1%.*})_$asm.bam
-#rm $wkdir/tmp.sam
-conda deactivate
-
-# index the bam file
-#samtools index -bc $wkdir/$(basename ${asm1%.*})_$asm.bam
-
-# write the names of the assemblies to a file for use by plotsr
-echo -e ""$asm1"\tEptatretus_stoutii
-"$reference"\tEptatretus_burgeri" > $wkdir/$(basename ${asm1%.*})_plotsr_assemblies_list.txt
-
-module unload samtools-uoneasy/1.18-GCC-12.3.0
-echo -e "Done\n\n"
+############################################
+##### map our assembly to the reference ####
+############################################
+#
+#echo "Mapping our assembly to the reference..."
+#conda activate minimap2
+#
+## align the genomes
+#
+## for reference asm5/asm10/asm20 = 0.1%/1%/5% sequence divergence
+#minimap2 \
+#-ax $asm \
+#-t 16 \
+#--eqx $asm1 $reference \
+#-o $wkdir/$(basename ${asm1%.*})_$asm.sam
+##samtools sort $wkdir/tmp.sam \
+##-o $wkdir/$(basename ${asm1%.*})_$asm.bam
+##rm $wkdir/tmp.sam
+#conda deactivate
+#
+## index the bam file
+##samtools index -bc $wkdir/$(basename ${asm1%.*})_$asm.bam
+#
+## write the names of the assemblies to a file for use by plotsr
+#echo -e ""$asm1"\tEptatretus_stoutii
+#"$reference"\tEptatretus_burgeri" > $wkdir/$(basename ${asm1%.*})_plotsr_assemblies_list.txt
+#
+#module unload samtools-uoneasy/1.18-GCC-12.3.0
+#echo -e "Done\n\n"
 
 
 ###############################################################
