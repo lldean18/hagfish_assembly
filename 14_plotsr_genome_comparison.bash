@@ -8,8 +8,8 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=70g
-#SBATCH --time=24:00:00
+#SBATCH --mem=350g
+#SBATCH --time=48:00:00
 #SBATCH --output=/gpfs01/home/mbzlld/code_and_scripts/slurm_out_scripts/slurm-%x-%j.out
 
 
@@ -48,7 +48,7 @@ echo "Mapping our assembly to the reference..."
 conda activate mummer
 nucmer --maxmatch -c 100 -b 500 -l 50 $reference $asm1
 delta-filter -m -i 90 -l 100 out.delta > out.filtered.delta
-show-coords -THrd out.filtered.delta > out.filtered.coordsi
+show-coords -THrd out.filtered.delta > out.filtered.coords
 conda deactivate
 
 conda activate syri
