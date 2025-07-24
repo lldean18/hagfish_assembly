@@ -38,8 +38,8 @@ python /gpfs01/home/mbzlld/software_bin/miniconda3/envs/quast/bin/quast \
 	--eukaryote \
 	-r $reference \
 	-o $wkdir/quast1 \
-	$wkdir/flye1/assembly.fasta \
-	$wkdir/flye1/assembly_ragtag/ragtag.scaffold.fasta \
+	$wkdir/flye_1/assembly.fasta \
+	$wkdir/flye_1/assembly_ragtag/ragtag.scaffold.fasta \
 	$wkdir/Eptatretus_atami_ref/JAXMNL01.fasta
 
 
