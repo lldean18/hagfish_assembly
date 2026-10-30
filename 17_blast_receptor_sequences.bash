@@ -20,11 +20,11 @@ conda activate blast
 cd /gpfs01/home/mbzlld/data/hagfish/serotonin_receptors
 
 
-# create a blast database for the assembly
-makeblastdb \
-    -in assembly.fasta \
-    -dbtype nucl \
-    -out assembly_db
+##  # create a blast database for the assembly
+##  makeblastdb \
+##      -in assembly.fasta \
+##      -dbtype nucl \
+##      -out assembly_db
 
 
 # search for each of the two genes
@@ -38,6 +38,6 @@ blastn \
     -outfmt 6 \
     -evalue 1e-10 \
     -word_size 11 \
-    -num_threads
+    -num_threads 8
 done
 
