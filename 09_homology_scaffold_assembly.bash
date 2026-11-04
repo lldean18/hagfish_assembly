@@ -14,6 +14,7 @@
 
 # set variables
 reference=/gpfs01/home/mbzlld/data/hagfish/Eptatretus_burgeri_ref/FYBX03.fasta.gz
+reference=/gpfs01/home/mbzlld/data/hagfish/Eptatretus_atami_ref/JAXMNL01.fasta.gz
 assembly=/gpfs01/home/mbzlld/data/hagfish/flye_1/assembly.fasta
 
 source $HOME/.bash_profile
@@ -30,12 +31,12 @@ source $HOME/.bash_profile
 
 # scaffold assembly with ragtag
 conda activate ragtag
-ragtag.py scaffold -t 16 -o ${assembly%.*}_ragtag ${reference%.*.*}_scaffs_only.fasta.gz $assembly
+ragtag.py scaffold -t 16 -o ${reference%.*.*}_ragtag ${reference%.*.*}_scaffs_only.fasta.gz $assembly
 conda deactivate
 
 
 # get rid of the ragtag suffixes
-sed -i 's/_RagTag//' ${assembly%.*}_ragtag/ragtag.scaffold.fasta
+sed -i 's/_RagTag//' ${reference%.*.*}_ragtag/ragtag.scaffold.fasta
 
 ## set the file containing chromosome names to keep
 #keep=/gpfs01/home/mbzlld/data/OrgOne/sumatran_tiger/liger_reference/tiger_chrs.txt
