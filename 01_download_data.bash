@@ -1,7 +1,8 @@
 #!/bin/bash
 # Laura Dean
-# 10/6/25
-# script written for running on the UoN HPC Ada
+# 19/11/26
+
+# script to download second batch of hagfish sequencing data from box
 
 #SBATCH --job-name=hagfish_download
 #SBATCH --partition=defq
