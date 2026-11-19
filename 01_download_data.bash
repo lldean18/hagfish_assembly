@@ -14,35 +14,30 @@
 #SBATCH --output=/gpfs01/home/mbzlld/code_and_scripts/slurm_out_scripts/slurm-%x-%j.out
 
 
-# set variables
-wkdir=/gpfs01/home/mbzlld/data/hagfish
-# move to working directory
-cd $wkdir
-
-
-# install and load software
+# setup env
+srun --partition defq --cpus-per-task 2 --mem 25g --time 72:00:00 --pty bash
 source $HOME/.bash_profile
-#conda create --name basespace hcc::basespace-cli
-conda activate basespace
-# authenticate my basespace account
-#bs authenticate
-# then follow the link it gives you to log in
-# get the list of what's in my project
-#bs  content project --name S-25-0583_ONT
-#+-------------+-----------------------------+
-#|     Id      |          FilePath           |
-#+-------------+-----------------------------+
-#| 40757060038 | pcr-testis-gDNA-runs.tar    |
-#| 40750692865 | native-testis-gDNA-runs.tar |
-#+-------------+-----------------------------+
+#conda create --name nodejs conda-forge::nodejs
+conda activate nodejs
+#npm install --global @box/cli
+
+
+mkdir -p /gpfs01/home/mbzlld/data/hagfish/box_data
+cd /gpfs01/home/mbzlld/data/hagfish/box_data
+
+
+# authenticate my box account
+# this needs to open a web browser so needs to be done in OOD
+#box login -d
+
+# list what is in the folder to check its right
+box folders:items 438920135943
 
 # download the data
-bs download project --name S-25-0583_ONT --output raw_data
+box folders:download 438920135943 --destination ./
 
 
-
-
-# deactivate software
+# cleanup env
 conda deactivate
 
 
