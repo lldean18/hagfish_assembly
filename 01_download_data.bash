@@ -31,10 +31,13 @@ cd /gpfs01/home/mbzlld/data/hagfish/box_data
 #box login -d
 
 # list what is in the folder to check its right
-box folders:items 438920135943
+box folders:items 438920135943 # STALLED
 
 # download the data
-box folders:download 438920135943 --destination ./
+box folders:download 438920135943 --destination ./ # COMPLETED
+box folders:download 438921088504 --destination ./
+
+438921088504
 
 
 # cleanup env
