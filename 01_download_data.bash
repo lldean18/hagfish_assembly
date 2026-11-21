@@ -34,10 +34,10 @@ cd /gpfs01/home/mbzlld/data/hagfish/box_data
 box folders:items 438920135943 # STALLED
 
 # download the data
-box folders:download 438920135943 --destination ./ # COMPLETED
-box folders:download 438921088504 --destination ./
-
-438921088504
+box folders:download 438920135943 --destination ./ # COMPLETED 55Gb Hagfish-25
+box folders:download 438921088504 --destination ./ # COMPLETED 42Gb Hagfish-10
+box folders:download 438935262027 --destination ./ # COMPLETED 2.6Mb Reports
+box folders:download 438937640547 --destination ./ #  Basecalled
 
 
 # cleanup env
