@@ -30,7 +30,7 @@ samtools bam2fq \
 -O \
 -t \
 --threads 23 \
-~/data/hagfish/basecalls/$INDIVIDUAL.bam | gzip > ~/data/hagfish/basecalls/$INDIVIDUAL.fastq.gz
+~/data/hagfish/basecalls/${INDIVIDUAL}_SUP.bam | gzip > ~/data/hagfish/basecalls/${INDIVIDUAL}_SUP.fastq.gz
 
 # cleanup env
 module unload samtools-uoneasy/1.18-GCC-12.3.0
