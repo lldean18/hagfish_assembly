@@ -6,5 +6,6 @@
 
 cd ~/data/hagfish/basecalls
 
-cat Hagfish-10.fastq.gz Hagfish-25.fastq.gz > 
+cat Hagfish-10_SUP.fastq.gz Hagfish-25_SUP.fastq.gz native_and_pcr_calls.fastq.gz > all_hagfish.fastq.gz
+
 
